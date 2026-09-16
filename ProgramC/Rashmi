@@ -3,7 +3,7 @@ public class InvalidResolutionException extends Exception {
     InvalidResolutionException(String message) {
         super(message);
     }
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         try {
             System.out.print("Enter photo resolution in MP: ");
