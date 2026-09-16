@@ -1,0 +1,14 @@
+public abstract class PrintOrder {
+    abstract void processPrint();
+    public static void main(String[] args) {
+        PosterPrint poster = new PosterPrint();
+        poster.processPrint();
+    }
+}
+class PosterPrint extends PrintOrder {
+    @Override
+    void processPrint() {
+        System.out.println("Processing poster print order...");
+        System.out.println("Poster is being printed successfully.");
+    }
+}
