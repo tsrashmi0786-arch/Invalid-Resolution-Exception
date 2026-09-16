@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class InvalidResolutionException extends Exception {
+    InvalidResolutionException(String message) {
+        super(message);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter photo resolution in MP: ");
+            double resolution = sc.nextDouble();
+            if (resolution == 0) {
+                throw new InvalidResolutionException(
+                    "Invalid Resolution: Resolution cannot be zero."
+                );
+            }
+            System.out.println("Valid Resolution: " + resolution + " MP");
+        } catch (InvalidResolutionException e) {
+            System.out.println(e.getMessage());
+        }
+        sc.close();
+    }
+}
