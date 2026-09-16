@@ -1,1 +1,33 @@
-
+public class Photo {
+    String title;
+    double resolutionMP;
+    Photo(String title, double resolutionMP) {
+        this.title = title;
+        this.resolutionMP = resolutionMP;
+    }
+    void display() {
+        System.out.println("Photo Title: " + title);
+        System.out.println("Resolution: " + resolutionMP + " MP");
+    }
+    public static void main(String[] args) {
+        EditedPhoto photo = new EditedPhoto(
+            "Nature",
+            24.5,
+            "Black and White"
+        );
+        photo.display();
+    }
+}
+class EditedPhoto extends Photo {
+    String filterApplied;
+    EditedPhoto(String title, double resolutionMP, String filterApplied) {
+        super(title, resolutionMP);
+        this.filterApplied = filterApplied;
+    }
+    @Override
+    void display() {
+        System.out.println("Photo Title: " + title);
+        System.out.println("Resolution: " + resolutionMP + " MP");
+        System.out.println("Filter Applied: " + filterApplied);
+    }
+}
